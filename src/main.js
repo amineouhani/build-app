@@ -126,7 +126,7 @@ const windowSettings = {
     width: 1360,
     height: 768,
     backgroundColor: '#FFF',
-    useContentSize: true,
+    useContentSize: false,
     resizable: true,
     center: true,
     alwaysOnTop: false,
@@ -135,6 +135,7 @@ const windowSettings = {
     webPreferences: {
         nodeIntegration: false,
         plugins: true,
+        thickFrame: true
     },
 };
 
