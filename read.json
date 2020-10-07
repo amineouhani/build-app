@@ -1,0 +1,4 @@
+{
+    "package-windows": "$(npm bin)/electron-packager . Message --out ./dist --overwrite --platform=win32 --arch=ia32 --app-version=0.1.0 --icon=./src/public/logo.ico --prune=true",
+    "package-linux": "$(npm bin)/electron-packager . Message --out ./dist --overwrite --platform=linux --arch=x64 --icon=./src/public/logo.png --prune=true --app-version=0.1.0"
+}

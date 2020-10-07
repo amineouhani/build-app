@@ -1,13 +1,11 @@
 {
-    "name": "Message-app",
+    "name": "message",
     "version": "0.1.0",
     "private": true,
     "main": "bootstrap.js",
     "scripts": {
         "start": "$(npm bin)/electron .",
-        "package-macos": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/logo.icns --app-version=0.1.0 --app-bundle-id=no.messageApp --helper-bundle-id=no.messageApp.helper --out ./dist --overwrite",
-        "package-windows": "$(npm bin)/electron-packager . Message --out ./dist --overwrite --platform=win32 --arch=ia32 --app-version=0.1.0 --icon=./src/public/logo.ico --prune=true",
-        "package-linux": "$(npm bin)/electron-packager . Message --out ./dist --overwrite --platform=linux --arch=x64 --icon=./src/public/logo.png --prune=true --app-version=0.1.0"
+        "for-mac": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/logo.icns --app-version=0.1.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite"
     },
     "engines": {
         "node": ">=8.9.3"
