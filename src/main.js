@@ -1,6 +1,5 @@
 import { BrowserWindow, Menu, app } from 'electron';
 import path from 'path';
-const support = require('./supportOS.json');
 
 app.commandLine.appendSwitch('widevine-cdm-path', path.join(__dirname, 'lib/widewine-cdm/1.4.8.903/widevinecdmadapter.plugin'));
 app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
@@ -76,8 +75,8 @@ const menuTemplate = [{
 }];
 
 const windowSettings = {
-    width: 700,
-    height: 500,
+    width: 1024,
+    height: 768,
     backgroundColor: '#FFF',
     useContentSize: false,
     resizable: true,
