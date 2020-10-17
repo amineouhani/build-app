@@ -1,5 +1,6 @@
 import { BrowserWindow, Menu, app } from 'electron';
 import path from 'path';
+const config = require('./settings.json');
 
 app.commandLine.appendSwitch('widevine-cdm-path', path.join(__dirname, 'lib/widewine-cdm/1.4.8.903/widevinecdmadapter.plugin'));
 app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
@@ -7,99 +8,44 @@ app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
 let mainWindow;
 
 const menuTemplate = [{
-    label: 'Message',
+    label: 'Reload',
     submenu: [{
-        label: 'About Application',
-        role: 'about',
-    }, {
-        type: 'separator',
-    }, {
-        label: 'Hide Message',
-        accelerator: 'Command+H',
-        role: 'hide',
-    }, {
-        label: 'Quit Message',
-        accelerator: 'Command+Q',
-        role: 'quit',
-    }],
-}, {
-    label: 'Edit',
-    submenu: [{
-        label: 'Undo',
-        accelerator: 'Command+Z',
-        role: 'undo',
-    }, {
-        label: 'Redo',
-        accelerator: 'Command+Y',
-        role: 'redo',
-    }, {
-        type: 'separator',
-    }, {
-        label: 'Cut',
-        accelerator: 'Command+X',
-        role: 'cut',
-    }, {
-        label: 'Copy',
-        accelerator: 'Command+C',
-        role: 'copy',
-    }, {
-        label: 'Paste',
-        accelerator: 'Command+V',
-        role: 'paste',
-    }, {
-        label: 'Select All',
-        accelerator: 'Command+A',
-        role: 'selectall',
-    }],
-}, {
-    label: 'View',
-    submenu: [{
-        label: 'Reload',
+        label: 'Reload App',
         accelerator: 'Command+R',
-        click: (menuItem, mainWindow) => {
+        click: (mainWindow) => {
             if (mainWindow) {
                 mainWindow.reload();
             }
         },
     }],
-}, {
-    label: 'Window',
-    submenu: [{
-        label: 'Zoom',
-        role: 'zoom',
-    }, {
-        label: 'Minimize',
-        accelerator: 'Command+M',
-        role: 'minimize',
-    }]
 }];
 
 const windowSettings = {
-    width: 1024,
-    height: 768,
-    backgroundColor: '#FFF',
-    useContentSize: false,
-    resizable: true,
-    center: true,
-    alwaysOnTop: false,
-    frame: true,
-    title: 'Messages',
+    width: config.width,
+    height: config.height,
+    backgroundColor: config.backgroundColor,
+    useContentSize: config.contentSize,
+    resizable: config.resizable,
+    center: config.isCenter,
+    alwaysOnTop: config.alwaysTop,
+    frame: config.frame,
+    title: config.title,
     webPreferences: {
-        nodeIntegration: false,
-        plugins: true,
-        thickFrame: true
+        nodeIntegration: config.nodeIntegration,
+        plugins: config.usePlugin,
+        thickFrame: config.thickFrame
     },
 };
 const activateApp = () => {
-    createFramelessWindow();
+    createWindow();
     Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 };
-const createFramelessWindow = () => {
+const createWindow = () => {
     if (mainWindow) {
         mainWindow.close();
     }
 
-    windowSettings.frame = true;
+    windowSettings.frame = config.allowFrame;
     mainWindow = new BrowserWindow(windowSettings);
     mainWindow.loadURL('https://messages.google.com/');
     mainWindow.webContents.on('did-finish-load', () => {});

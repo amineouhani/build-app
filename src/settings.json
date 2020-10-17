@@ -1,0 +1,15 @@
+{
+    "title": "Message App",
+    "width": "1000",
+    "height": "768",
+    "backgroundColor": "#FFF",
+    "contentSize": false,
+    "resizable": true,
+    "isCenter": true,
+    "alwaysTop": false,
+    "frame": true, 
+    "nodeIntegration": true,
+    "usePlugin": true,
+    "thickFrame": true,
+    "allowFrame": true
+}
