@@ -5,7 +5,9 @@
     "main": "bootstrap.js",
     "scripts": {
         "start": "$(npm bin)/electron .",
-        "mac": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/logo.icns --app-version=0.1.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite",
+        "mac-message": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/Message/logo.icns --app-version=0.1.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite --prune=true",
+        "mac-instagram": "$(npm bin)/electron-packager . Instagram --platform=darwin --arch=x64 --icon=./src/public/Instagram/logo.icns --app-version=0.1.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite --prune=true",
+        "mac-linkedin": "$(npm bin)/electron-packager . Linkedin --platform=darwin --arch=x64 --icon=./src/public/Linkedin/logo.icns --app-version=0.1.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite --prune=true",
         "windows": "$(npm bin)/electron-packager . Message --out ./dist --overwrite --platform=win32 --arch=ia32 --app-version=0.1.0 --icon=./src/public/logo.ico --prune=true",
         "compression": "maximum"
     },

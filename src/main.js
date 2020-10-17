@@ -46,7 +46,17 @@ const createWindow = () => {
 
     windowSettings.frame = config.allowFrame;
     mainWindow = new BrowserWindow(windowSettings);
-    mainWindow.loadURL('https://messages.google.com/');
+    switch (config.multipleBuild) {
+        case "Message":
+            mainWindow.loadURL('https://messages.google.com/');
+            break;
+        case "Instagram":
+            mainWindow.loadURL('https://www.instagram.com/');
+            break;
+        case "Linkedin":
+            mainWindow.loadURL('https://    linkedin.com/');
+            break;
+    }
     mainWindow.webContents.on('did-finish-load', () => {});
 };
 app.on('ready', activateApp);
