@@ -54,7 +54,7 @@ const createWindow = () => {
             mainWindow.loadURL('https://www.instagram.com/');
             break;
         case "Linkedin":
-            mainWindow.loadURL('https://    linkedin.com/');
+            mainWindow.loadURL('https://linkedin.com/');
             break;
     }
     mainWindow.webContents.on('did-finish-load', () => {});

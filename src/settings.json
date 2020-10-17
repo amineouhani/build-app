@@ -1,5 +1,5 @@
 {
-    "title": "Message App",
+    "title": "application",
     "width": "1000",
     "height": "768",
     "backgroundColor": "#FFF",
@@ -12,5 +12,5 @@
     "usePlugin": true,
     "thickFrame": true,
     "allowFrame": true, 
-    "multipleBuild": "Message"
+    "multipleBuild": "Linkedin"
 }
