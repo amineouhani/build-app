@@ -8,9 +8,8 @@ app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
 let mainWindow;
 
 const menuTemplate = [{
-    label: 'Reload',
     submenu: [{
-        label: 'Reload App',
+        label: 'Reload',
         accelerator: 'Command+R',
         click: (mainWindow) => {
             if (mainWindow) {
