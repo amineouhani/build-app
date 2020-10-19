@@ -7,18 +7,6 @@ app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
 
 let mainWindow;
 
-const menuTemplate = [{
-    submenu: [{
-        label: 'Reload',
-        accelerator: 'Command+R',
-        click: (mainWindow) => {
-            if (mainWindow) {
-                mainWindow.reload();
-            }
-        },
-    }],
-}];
-
 const windowSettings = {
     width: config.width,
     height: config.height,
@@ -37,7 +25,6 @@ const windowSettings = {
 };
 const activateApp = () => {
     createWindow();
-    Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate));
 };
 const createWindow = () => {
     if (mainWindow) {

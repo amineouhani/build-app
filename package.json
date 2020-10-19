@@ -5,9 +5,9 @@
     "main": "bootstrap.js",
     "scripts": {
         "start": "$(npm bin)/electron .",
-        "mac-message": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/Message/logo.icns --app-version=0.3.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite --prune=true",
-        "mac-instagram": "$(npm bin)/electron-packager . Instagram --platform=darwin --arch=x64 --icon=./src/public/Instagram/logo.icns --app-version=0.3.0 --app-bundle-id=no.instagram --helper-bundle-id=no.instagram.helper --out ./dist --overwrite --prune=true",
-        "mac-linkedin": "$(npm bin)/electron-packager . Linkedin --platform=darwin --arch=x64 --icon=./src/public/Linkedin/logo.icns --app-version=0.3.0 --app-bundle-id=no.linkedin --helper-bundle-id=no.linkedin.helper --out ./dist --overwrite --prune=true"
+        "message": "$(npm bin)/electron-packager . Message --platform=darwin --arch=x64 --icon=./src/public/Message/logo.icns --app-version=0.3.0 --app-bundle-id=no.message --helper-bundle-id=no.message.helper --out ./dist --overwrite --prune=true",
+        "instagram": "$(npm bin)/electron-packager . Instagram --platform=darwin --arch=x64 --icon=./src/public/Instagram/logo.icns --app-version=0.3.0 --app-bundle-id=no.instagram --helper-bundle-id=no.instagram.helper --out ./dist --overwrite --prune=true",
+        "linkedin": "$(npm bin)/electron-packager . Linkedin --platform=darwin --arch=x64 --icon=./src/public/Linkedin/logo.icns --app-version=0.3.0 --app-bundle-id=no.linkedin --helper-bundle-id=no.linkedin.helper --out ./dist --overwrite --prune=true"
     },
     "engines": {
         "node": ">=8.9.3"
