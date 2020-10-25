@@ -1,9 +1,5 @@
 import { BrowserWindow, app } from 'electron';
-import path from 'path';
 const config = require('./settings.json');
-
-app.commandLine.appendSwitch('widevine-cdm-path', path.join(__dirname, 'lib/widewine-cdm/1.4.8.903/widevinecdmadapter.plugin'));
-app.commandLine.appendSwitch('widevine-cdm-version', '1.4.8.903');
 
 let mainWindow;
 
@@ -23,7 +19,7 @@ const windowSettings = {
         thickFrame: config.thickFrame
     },
 };
-const activateApp = () => {
+const onWindow = () => {
     createWindow();
 };
 const createWindow = () => {
@@ -46,4 +42,4 @@ const createWindow = () => {
     }
     mainWindow.webContents.on('did-finish-load', () => {});
 };
-app.on('ready', activateApp);
+app.on('ready', onWindow);
