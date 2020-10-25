@@ -1,4 +1,4 @@
-import { BrowserWindow, Menu, app } from 'electron';
+import { BrowserWindow, app } from 'electron';
 import path from 'path';
 const config = require('./settings.json');
 
